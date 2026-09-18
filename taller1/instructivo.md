@@ -5,6 +5,7 @@
 
 El siguiente taller se crea con la intencion de modelar un diseño de programacion orientada a objetos, que se relaciona con un sistema embebido, esto se hace mediante un diseño en el cual, el microcontrolador recibe instrucciones de un script de C#, y devuelve resultados despues de ejecutar dichas instrucciones para que dicho archivo de C# las procese devuelta. 
 
+
 # Materiales: 
 
 
@@ -24,11 +25,39 @@ El siguiente taller se crea con la intencion de modelar un diseño de programaci
 ![diagrama del circuito](circuit_image.png)
 
 
-# Instrucciones 
+# Pinout: 
 
-* Armar el circuito conforme al diagrama 
-* Meter el codigo .py en el raspberry 
-* Descargar el template en C# que luego sera modificado 
+| Pin Rasp | Elemento al que se conecta | 
+| ---------| ---------------------------|
+|(3) GND   | Tierra del protoboard | 
+|(6) GP4   | MISO (CFRID) | 
+|(7) GP5   | SDA (CFRID) |  
+|(9) GP6 |  SCK (CFRID) | 
+|(10) GP7 | MOSI (CFRID)| 
+|(36) 3V3 | (+) del protoboard | 
+|(32) GP27 | nodo entre R y LDR | 
+|(29) GP22 | RST (CFRID) | 
+|(27) GP21 | conectado a R - LED| 
+
+
+
+# Instrucciones iniciales: 
+El repositorio con los códigos necesarios será compartido durante la practica o con algunos días de anticipación.
+
+
+* Armar el circuito conforme al diagrama
+* Usando el IDE thonny inserte rasp.py en la raiz del microcontrolador. 
+* Usando el IDE thonny inserte el archivo mfrc522.py en la carpeta lib/ del microcontrolador ya que este archivo es necesario para poder hacer uso de la MRFID
+* Descargar el template en C# que luego sera modificado durante el taller. 
 * Ejecutar el codigo en la raspberry. 
+* Ejecutar el codigo de C# una vez el puerto esta desocupado, para desocupar el puerto el IDE de Thonny tiene que quedar completamente cerrado antes de ejecutar el archivo en C# para permitir la comunicacion entre el archivo y la raspberry. 
+
+# Notas: 
+Estas instrucciones solo tienen que ser llevadas a cabo durante el inicio del taller, no se requiere que se hagan desde antes. 
+
+Usualmente, puede que al ejecutar el archivo de C# este retorne que el puerto COM 
+aun esta ocupado, para esto lo mejor es que en vez de cerrar Thonny de manera normal, realicen los siguientes pasos: Run -> Disconnect. Si el puerto sigue sin liberar, desconecten la USB, esperen unos segundos y vuelvanla a conectar. 
+
+
 
 
